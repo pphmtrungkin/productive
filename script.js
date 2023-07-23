@@ -2,6 +2,7 @@ window.addEventListener('load', ()=> {
     const form = document.querySelector("#todo-form");
     const input = document.querySelector("#todo-input");
     const list_el = document.querySelector(".todo-list");
+    const body = document.getElementsByTagName("body")[0];
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -102,6 +103,11 @@ window.addEventListener('load', ()=> {
         'Short break': 300,
         'Long break': 900,
     }
+    const modeBackground = {
+        'Pomodoro': `var(--red)`,
+        'Short break': `var(--green)`,
+        'Long break': `var(--blue)`,
+    }
 
     let mode = "Pomodoro";
     let remainingTime = pomodoroMode[mode];
@@ -113,16 +119,11 @@ window.addEventListener('load', ()=> {
     let pauseButton = document.querySelector("#pomodoro-pause");
     let restartButton = document.querySelector("#pomodoro-restart");
 
-
-    const stopTimer = () => {
-        clearInterval(timeStart);
-        isClockTicking=false;
-        startButton.style.display="initial";
-    }
-
+    
     let modeButtons = document.getElementsByClassName("mode-btn");
+    let controlButtons = document.getElementsByClassName("control-btn");
     var buttonSound = new Audio();
-
+    
     for(let i=0;i<3;i++){
         modeButtons[i].addEventListener('click', ()=>{
             buttonSound.src = 'button-sound.mp3';
@@ -133,13 +134,15 @@ window.addEventListener('load', ()=> {
             }
             for(let j=0;j<3;j++){
                 modeButtons[j].classList.remove("active");
+                controlButtons[j].style.color = modeBackground[modeButtons[i].innerText]
             }
             modeButtons[i].classList.add("active");
             remainingTime = pomodoroMode[modeButtons[i].innerText];
+            body.style.backgroundColor= modeBackground[modeButtons[i].innerText];
             displayTimer();  
         })
     }
-
+    
     const switchMode = () => {
         if(mode=='Pomodoro'){
             numberOfSession++;
@@ -157,11 +160,12 @@ window.addEventListener('load', ()=> {
             if(modeButtons[i].innerText==mode){
                 modeButtons[i].classList.add("active");
                 remainingTime = pomodoroMode[mode];
+                body.style.backgroundColor= modeBackground[modeButtons[i].innerText];    
                 displayTimer();
             }
         }
     }
-
+    
     const displayTimer = () => {
         const minutes = Math.floor(remainingTime/ 60);
         const seconds = remainingTime % 60;
@@ -189,7 +193,12 @@ window.addEventListener('load', ()=> {
             startButton.style.display="none";
         }
     })
-
+    
+    const stopTimer = () => {
+        clearInterval(timeStart);
+        isClockTicking=false;
+        startButton.style.display="initial";
+    }
     pauseButton.addEventListener('click', ()=> {
         stopTimer();
         buttonSound.src = 'button-press.mp3';

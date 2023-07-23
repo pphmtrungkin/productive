@@ -2,19 +2,24 @@
     --dark: #000000;
     --white: #FFFFFF;
     --grey: #E5E5E5E5;
+    --red: rgb(186, 73, 73);
+    --green: rgb(56, 133, 138);
+    --blue: rgb(57, 112, 151);
 }
 * {
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--white);
 }
 html {
     margin: 0;
     padding: 0;
 }
 body {
-    background-color: var(--grey);
-    color: var(--dark);
+    background-color: var(--red);
+    color: var(--white);
     text-align: center;
+    transition: 0.5s;
 }
 input[type=submit], button {
     border-width: 1px;
@@ -30,15 +35,19 @@ input[type=submit]:hover, button:hover {
     opacity: 1;
 }
 #todo-input {
-    width: 20%;
-    height: 36px;
+    width: 30%;
+    color: var(--dark);
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
 }
 #todo-input::placeholder {
-    font-size: 16px;
+    font-size: 20px;
 }
 #todo-submit {
-    padding: 8px 10px;
-    font-size: 14px !important;
+    padding: 8px 12px;
+    font-size: 20px ;
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -55,10 +64,14 @@ input[type=submit]:hover, button:hover {
     margin-right: 16px;
 }
 .task-input {
-    width: 22%;
+    width: 30%;
     margin-bottom: 12px;
     font-size: 20px;
     height: fit-content;
+    color: var(--dark);
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
 }
 .task-input:read-only {
     outline: none;
@@ -72,43 +85,65 @@ input[type=submit]:hover, button:hover {
 }
 .task-btn {
     font-size: 20px;
+    padding: 8px 12px;
+    text-transform: uppercase;
+    font-weight: 500;
 }
 .delete-btn {
     margin-left: 4px;
 }
-.active {
-    background-color: #E1E1E1;
-    font-weight: 600;
-}
 .pomodoro-mode:hover {
     cursor: pointer;
 }
-.mode-btn :focus {
-    outline: none;
+.mode-btn .active {
+    background-color: rgba(0, 0, 0, 0.15);
+    font-weight: 600;
 }
 .mode-btn{
+    border: none;
     padding: 8px 12px;
     margin: 0 4px;
     font-size: 20px;
+    color: var(--white);
+    background-color: transparent;
+}
+.mode-btn:hover {
+    color: var(--white);
+    background-color: rgba(0, 0, 0, 0.15);
+}
+.active {
+    color: var(--white);
+    background-color: rgba(0, 0, 0, 0.15);
 }
 #pomodoro-timer {
     height: fit-content;
-    font-size: 100px;
-    font-weight: 400;
+    font-size: 120px;
+    font-weight: 600;
 }
 .control-btn {
     padding: 8px 16px;
-    font-size: 20px;
-    text-transform: uppercase;
     margin: 0 4px;
-    border-radius: 2px;
+    font-size: 24px;
+    text-transform: uppercase;
     transition: 0.2s;
-    border-width: 1px;
-    border-color: var(--grey);
     border-radius: 4px;
+    border: none;
+    color: var(--red);
+    font-weight: 500;
+    box-shadow: 0 4px 0 var(--grey);
+    background-color: white;
+    transition: 0.3s;
+}
+.control-btn:hover{
+    color: var(--red);
+    background-color: white;
+}
+.control-btn:focus{
+    transform: translateY(4px);
+    box-shadow: none;
 }
 .pomodoro-control {
-    margin-top: 4px;
+    margin-top: 20px;
 }
 .pomodoro-control:hover {
     cursor: pointer;
@@ -117,6 +152,9 @@ input[type=submit]:hover, button:hover {
     margin: 0 auto;
     width: fit-content;
     height: fit-content;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 12px;
 }
 .check-icon {
     font-size: 20px;  
