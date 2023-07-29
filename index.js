@@ -126,7 +126,7 @@ window.addEventListener('load', ()=> {
     
     for(let i=0;i<3;i++){
         modeButtons[i].addEventListener('click', ()=>{
-            buttonSound.src = 'button-sound.mp3';
+            buttonSound.src = '../src/media/button-sound.mp3';
             buttonSound.play();
             if(isClockTicking==true){
                 stopTimer();
@@ -176,14 +176,14 @@ window.addEventListener('load', ()=> {
     displayTimer();
     
     startButton.addEventListener('click', () => {
-        buttonSound.src = 'button-press.mp3';
+        buttonSound.src = '../src/media/button-press.mp3';
         buttonSound.play();
         if(isClockTicking==false){
             timeStart = setInterval(() => {
                 remainingTime--;
                 displayTimer();
                 if(remainingTime==0){
-                    buttonSound.src = 'alarm-kitchen.mp3';
+                    buttonSound.src = '../src/media/alarm-kitchen.mp3';
                     buttonSound.play();
                     switchMode();
                     stopTimer();
@@ -201,12 +201,12 @@ window.addEventListener('load', ()=> {
     }
     pauseButton.addEventListener('click', ()=> {
         stopTimer();
-        buttonSound.src = 'button-press.mp3';
+        buttonSound.src = '../src/media/button-press.mp3';
         buttonSound.play();
         startButton.style.display="initial";
     });
     restartButton.addEventListener('click', ()=> {
-        buttonSound.src = 'button-press.mp3';
+        buttonSound.src = '../src/media/button-press.mp3';
         buttonSound.play();
         if(isClockTicking==false){
             for(let i=0;i<3;i++){
@@ -226,11 +226,14 @@ window.addEventListener('load', ()=> {
             }
         }
     })
-})
+    const optionText = document.getElementsByClassName("option-text")[0];
+    const itemLink = document.getElementsByClassName("nav-item_link")[0];
+    const optionButton = document.getElementsByClassName("option-button")[0];
 
-let currentPath = window.location.pathname;
-loginFile = `/productive/login.html`;
-if(currentPath===loginFile){
-    let header = document.getElementsByTagName("header")[0];
-    header.style.display="none";
-}
+    if(optionText.innerText!=="Login"){
+        optionButton.addEventListener('click', ()=>{
+            itemLink.setAttribute("href", "#logout-message");
+            document.getElementById("logout-message").style.display="block";
+        })
+    }
+})
