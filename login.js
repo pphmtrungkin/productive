@@ -5,7 +5,7 @@ const successSection = document.getElementById("success-section");
 
 
 if(window.location.pathname=="/productive/public/register.php"){
-    loginSection.style.height="60vh";
+    loginSection.style.height="61vh";
     if(message.innerText=="User registered"){
         loginSection.style.display="none";
         registerSection.style.display="none";

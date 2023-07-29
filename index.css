@@ -18,6 +18,7 @@ html {
 header {
     max-width: 620px;
     margin: 0 auto;
+    margin-bottom: 12px;
 }
 body{
     transition: 0.6s;
@@ -49,8 +50,8 @@ input[type=submit]:hover, main button:hover {
 }
 .nav-item {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 .nav-item_link{
     display: flex;
@@ -59,7 +60,8 @@ input[type=submit]:hover, main button:hover {
 }
 .nav-item_link h3 {
     margin-left: 4px;
-    font-size: 20px;
+    font-size: 24px;
+    font-weight: 600;
 }
 .option-button{
     display: flex;
@@ -80,39 +82,33 @@ input[type=submit]:hover, main button:hover {
     cursor: pointer;
 }
 .option-text {
-    margin-left: 4px;
-    font-size: 16px;
+    margin-left: 8px;
+    font-size: 18px;
+    letter-spacing: 1px;
 }
 .option-icon {
     height: 16px;
     width: 16px;
 }
-#logout-message{
+.dropdown li {
+    display: block;
+}
+.dropdown li a{
+    text-align: center;
+    text-decoration: none;
+}
+.dropdown li button {
+    width: 142%;
+}
+.dropdown {
+    position: absolute;
+    right: calc(30% + 12px);
+    height: 36px;
+    z-index: 99;
     display: none;
 }
-#logout-message h2 {
-    margin-left: 4px;
-}
-#logout-message {
-    margin: 32px 0;
-}
-#logout-message button{
-    font-size: 20px;
-    color: rgb(186, 73, 73);
-    padding: 8px 24px;
-    margin: 0 4px;
-    font-weight: 600;
-    box-shadow: 0 4px 0 var(--grey);
-    border: none;
-    opacity: 1;
-}
-#logout-message button:hover {
-    color: rgb(186, 73, 73);
-}
-#logout-message a {
-    background-color: initial;
-    color: rgb(186, 73, 73);
-    text-decoration: none;
+.nav-item:hover .dropdown {
+    display: block;
 }
 .logo-icon {
     width: 20px;
@@ -236,7 +232,6 @@ input[type=submit]:hover, main button:hover {
 }
 #pomodoro {
     margin: 0 auto;
-    margin-top: 20px;
     width: fit-content;
     width: -moz-fit-content;
     height: fit-content;

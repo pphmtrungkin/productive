@@ -72,7 +72,7 @@
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" id="login-form">
                 <h3>Email</h3>
                 <input placeholder="example@mail.com" type="email" name="email" required>
-                <h3>Username</h3>
+                <h3>Your name</h3>
                 <input type="text" name="username" required>
                 <h3>Password</h3>
                 <input type="password" name="password" required>

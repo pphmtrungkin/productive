@@ -1,12 +1,12 @@
 <?php 
     session_start();
     if(($_SERVER["REQUEST_METHOD"]=="POST")){
-        
+        $email = $_POST["email"];
         $username = $_POST["username"];
         $passwordLogin = $_POST["pass"];
         
         require "database.php";
-        $sql = "SELECT * FROM users WHERE username='$username'";
+        $sql = "SELECT * FROM users WHERE email='$email'";
 
         $result = mysqli_query($conn, $sql);
         if(mysqli_num_rows($result)===1){
@@ -46,7 +46,9 @@
         <h2 id="login-title">Login</h2>
         <div class="login-section">
             <form action="login.php" method="POST">
-                <h3>Username</h3>
+                <h3>Email</h3>
+                <input type="email" name="email" required>
+                <h3>Your name</h3>
                 <input type="text" name="username" required>
                 <h3>Password</h3>
                 <input type="password" name="pass" required>

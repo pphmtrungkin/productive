@@ -230,10 +230,8 @@ window.addEventListener('load', ()=> {
     const itemLink = document.getElementsByClassName("nav-item_link")[0];
     const optionButton = document.getElementsByClassName("option-button")[0];
 
-    if(optionText.innerText!=="Login"){
-        optionButton.addEventListener('click', ()=>{
-            itemLink.setAttribute("href", "#logout-message");
-            document.getElementById("logout-message").style.display="block";
-        })
+    if(optionText.innerText=="Login"){
+        const dropdown = document.getElementsByClassName("dropdown")[0];
+        dropdown.style.display="none";
     }
 })

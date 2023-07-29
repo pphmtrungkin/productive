@@ -35,17 +35,19 @@
                         </p>
                     </a>
                 </button>
+                <ul class="dropdown">
+                    <li>
+                        <button type="button" class="option-button">
+                            <a href="logout.php" class="nav-item_link">
+                                <p class="option-text">Log out</p>
+                            </a>
+                        </button>
+                    </li>
+                </ul>
             </li>
         </ul>
     </header>
     <main>
-        <div id="logout-message">
-            <h2>Do you want to log out?</h2>
-            <button type="button">
-                <a href="logout.php">YES</a>
-            </button>
-            <button type="button">NO</button>
-        </div>
         <div id="pomodoro">
             <div class="pomodoro-mode">
                 <button type="button" id="pomodoro-session" class="mode-btn active">Pomodoro</button>
