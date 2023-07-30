@@ -102,7 +102,8 @@ input[type=submit]:hover, main button:hover {
 }
 .dropdown {
     position: absolute;
-    right: calc(30% + 12px);
+    top: 66px;
+    right: calc(30% + 17px);
     height: 36px;
     z-index: 99;
     display: none;

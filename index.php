@@ -6,8 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../index.css">
-    <link rel="icon" type="image/x-icon" href="../src/media/icon.jpg">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="icon" type="image/x-icon" href="./src/media/icon.jpg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Let's Productive</title>
 </head>
@@ -16,14 +16,14 @@
         <ul class="nav-list">
             <li class="nav-item">
                 <a href="" class="nav-item_link">
-                    <img src="../src/media/icon-white2.png" alt="check icon" class="logo-icon">
+                    <img src="./src/media/icon-white2.png" alt="check icon" class="logo-icon">
                     <h3>Productive</h3>
                 </a>
             </li>
             <li class="nav-item">
                 <button type="button" class="option-button">
-                    <a href="login.php" class="nav-item_link">
-                        <img src="../src/media/user-white.png" alt="user-icon" class="option-icon">
+                    <a href="./public/login.php" class="nav-item_link">
+                        <img src="./src/media/user-white.png" alt="user-icon" class="option-icon">
                         <p class="option-text">
                             <?php 
                                 if(isset($_SESSION["username"])){
@@ -38,7 +38,7 @@
                 <ul class="dropdown">
                     <li>
                         <button type="button" class="option-button">
-                            <a href="logout.php" class="nav-item_link">
+                            <a href="./public/logout.php" class="nav-item_link">
                                 <p class="option-text">Log out</p>
                             </a>
                         </button>
@@ -69,6 +69,6 @@
         <h2 id="todo-title">To do list</h2>
         <ul class="todo-list"></ul>
     </main>
-    <script defer src="../index.js"></script>
+    <script defer src="./index.js"></script>
 </body>
 </html>

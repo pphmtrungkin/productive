@@ -54,7 +54,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../index.css">
-    <link rel="stylesheet" href="../login.css">
+    <link rel="stylesheet" href="./login.css">
     <link rel="icon" type="image/x-icon" href="../src/media/icon.jpg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Register - Let's Productive</title>
@@ -62,7 +62,7 @@
 <body>
     <main>
         <div class="link-section">
-            <a href="index.php">
+            <a href="../index.php">
                 <img src="../src/media/icon-white2.png" alt="check icon" class="link-icon">
                 <h3 id="link-title">Productive</h3>
             </a>
@@ -94,9 +94,9 @@
         </div>
         <div class="register-section">
             <h3>Already have an account?</h3>
-            <a href="login.php" class="register-link">Login</a>
+            <a href="./login.php" class="register-link">Login</a>
         </div>
     </main>
-    <script src="../login.js"></script>
+    <script src="./login.js"></script>
 </body>
 </html>
